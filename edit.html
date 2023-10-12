@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <!-- ... your header and menu ... -->
+    <form class="body" method="post" id="infoForm">
+        <div class="row">
+            <div class="col-md-4">
+                <span class="dxeBase_Mulberry normalText">
+                    <strong id="name">Họ và tên&emsp;: </strong>
+                    <input id="nameInput" type="text">
+                </span>
+                <br>
+                <span class="dxeBase_Mulberry normalText">
+                    <strong id="year">Năm vào trường&emsp;: </strong>
+                    <select id="yearInput">
+                        <option value="2015">2015</option>
+                        <option value="2016">2016</option>
+                        <option value="2017">2017</option>
+                        <option value="2018">2018</option>
+                        <option value="2019">2019</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                    </select>
+                </span>
+                <br>
+                <span class="dxeBase_Mulberry normalText">
+                    <strong id="level">Bậc đào tạo&emsp;: </strong>
+                    <input id="levelInput" type="text">
+                </span>
+                <br>
+                <span class="dxeBase_Mulberry normalText">
+                    <strong id="program">Chương trình&emsp;: </strong>
+                    <input id="programInput" type="text">
+                </span>
+                <br>
+                <span class="dxeBase_Mulberry normalText">
+                    <strong id="faculty">Khoa/Viện quản lý&emsp;: </strong>
+                    <input id="facultyInput" type="text">
+                </span>
+                <br>
+                <span class="dxeBase_Mulberry normalText">
+                    <strong id="status">Tình trạng học tập&emsp;: </strong>
+                    <select id="statusInput">
+                        <option value="Học">Đang Học</option>
+                        <option value="Hoãn">Tạm Hoãn</option>
+                        <option value="Nghỉ">Thôi Học</option>
+                    </select>
+                </span>
+                <br>
+                <span class="dxeBase_Mulberry normalText">
+                    <strong id="course">Khóa học&emsp;: </strong>
+                    <input id="courseInput" type="text">
+                </span>
+                <br>
+                <span class="dxeBase_Mulberry normalText">
+                    <strong id="sex">Giới tính&emsp;: </strong>
+                    <select id="sexInput">
+                        <option value="Nam">Nam</option>
+                        <option value="Nữ">Nữ</option>
+                    </select>
+                </span>
+                <br>
+                <br>
+                <span class="dxeBase_Mulberry normalText">
+                    <strong id="email">Email&emsp;: </strong>
+                    <input id="emailInput" type="email">
+                </span>
+                <br>
+              
+
+            </div>
+        </div>
+
+        <div class="col-3">
+            <button type="submit">submit</button>
+            <button><a href="index.html">Cancel</a></button>
+        </div>
+    </form>
+    <script>
+        document.getElementById('infoForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const newName = document.getElementById('nameInput').value;
+            const newYear = document.getElementById('yearInput').value;
+            const newLevel = document.getElementById('levelInput').value;
+            const newProgram = document.getElementById('programInput').value;
+            const newFaculty = document.getElementById('facultyInput').value;
+            const newStatus = document.getElementById('statusInput').value;
+            const newSex = document.getElementById('sexInput').value;
+            const newEmail = document.getElementById('emailInput').value;
+            if (!newEmail.endsWith('@sis.hust.edu.vn')) {
+                alert('Email must end with @sis.hust.edu.vn');
+                return;
+            }
+            const newCourse = document.getElementById('courseInput').value;
+            localStorage.setItem('name', newName);       
+            localStorage.setItem('year', newYear); 
+            localStorage.setItem('level', newLevel);
+            localStorage.setItem('program', newProgram);
+            localStorage.setItem('faculty', newFaculty);  
+            localStorage.setItem('status', newStatus);
+            localStorage.setItem('sex', newSex);
+            localStorage.setItem('email', newEmail);
+            localStorage.setItem('course', newCourse);
+
+    
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>
